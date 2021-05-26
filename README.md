@@ -1,2 +1,55 @@
 # ICS2O-Unit2-05-HTML
-[![linter](https://github.com/DamonDoesStuff/ICS2O-Unit2-05-HTML/workflows/linter/badge.svg)](https://github.com/marketplace/actions/super-linter)
+###############################################
+
+# Run GitHub's Super Linter against code base #
+
+###############################################
+
+
+
+name: linter
+
+
+
+on: push
+
+
+
+jobs:
+
+  run-linters:
+
+    name: Linters
+
+    runs-on: ubuntu-latest
+
+
+
+    steps:
+
+      - name: Check out Git repository
+
+        uses: actions/checkout@master
+
+        
+
+      - name: GitHub Super-Linter
+
+        uses: github/super-linter@master
+
+        env:
+
+          VALIDATE_ALL_CODEBASE: true
+
+          DEFAULT_BRANCH: master
+
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+Then place the following code in a README.md file in your root folder:
+
+Make sure you replace <OWNER> with your Github Account name, and <REPOSITORY> with the name of your project!
+
+ [![linter](https://github.com/<OWNER>/<REPOSITORY>/workflows/linter/badge.svg)](https://github.com/marketplace/actions/super-linter)         
+
+Example of what a standard HTML, CSS, JS repo should look. like
+
